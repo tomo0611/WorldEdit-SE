@@ -7,10 +7,13 @@ author: tomo0611
 description: World Editor !!
 website: https://github.com/tomo0611/WorldEdit-SE
 commands:
- pos1:
-  description: Set 1st Point
-  usage: "/wse pos1"
-  permission: wse.command.pos1
+  wse:
+    description: World Edit SE command
+    usage: "/wse"
+    aliases:
+      - ws
+      - wese
+    permission: wse.command
 permissions:
  wse:
   default: true

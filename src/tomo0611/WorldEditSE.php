@@ -22,6 +22,8 @@ class WorldEditSE extends PluginBase{
 	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
 		switch($command->getName()){
 			case "wse":
+                    var_dump($args);
+                    $this->getLogger()->info("Hello!");
 					return true;
 			default:
 				return false;
