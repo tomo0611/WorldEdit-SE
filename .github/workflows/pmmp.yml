@@ -15,5 +15,4 @@ jobs:
       run: echo Hello, world! |
         sudo apt-fast install -y git
         git clone https://github.com/pmmp/DevTools
-        cd ./DevTools/
         php -dphar.readonly=0 ./DevTools/src/DevTools/ConsoleScript.php --make $GITHUB_WORKSPACE --out ./WorldEditSE.phar
