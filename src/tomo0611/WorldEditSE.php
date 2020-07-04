@@ -17,7 +17,7 @@ class WorldEditSE extends PluginBase{
 	public function onEnable() : void{
 		@mkdir($this->getDataFolder());
 		$this->getLogger()->notice("has just been enabled!");
-        $listener = new EventListener();
+        $listener = new EventListener($this);
         $this->getServer()->getPluginManager()->registerEvents($listener, $this);
 	}
 
