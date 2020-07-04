@@ -1,4 +1,5 @@
 name: WorldEdit-SE
+prefix: WEditSE
 main: tomo0611\WorldEditSE
 version: 1.0.0
 api: [3.14.1]
@@ -6,23 +7,12 @@ load: STARTUP
 author: tomo0611
 description: World Editor !!
 website: https://github.com/tomo0611/WorldEdit-SE
-commands:
-  wse:
-    description: World Edit SE command
-    usage: "/wse"
-    aliases:
-      - ws
-      - wese
-    permission: wse.command
+
 permissions:
- wse:
-  default: true
-  description: "Allows using all features"
-  children:
-   wse.command:
+  wse.*:
     default: true
-    description: "Allows using all the features commands"
+    description: permission that allows player to use WEditSE
     children:
-     wse.command.pos1:
-      default: true
-      description: "Allows the set of pos1"
+      wse.command.*:
+        default: true
+        description: permission that allows player to use WEditSE commands
