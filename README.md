@@ -23,3 +23,7 @@ WorldEdit SE(Special Edition) 2020はpmmpのための最適化されたWorldEdit
 | ベンチマーキング                  | 予定      |
 | 推測完了時間(ETA)の表示               | 予定       |
 | ユーザーが埋まらないように                                     |  予定       |
+
+## 感謝
+
+fuyutukiさんの[Texter](https://github.com/fuyutsuki/Texter)の命名規則や継承方法を参考にさせていただいているところがあります。感謝します！
