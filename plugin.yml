@@ -1,0 +1,25 @@
+name: WorldEdit-SE
+main: tomo0611\WorldEditSE
+version: 1.16.0+dev
+api: [3.14.1]
+load: STARTUP
+author: tomo0611
+description: World Editor !!
+website: https://github.com/tomo0611/WorldEdit-SE
+commands:
+ pos1:
+  description: Set 1st Point
+  usage: "/wse pos1"
+  permission: wse.command.pos1
+permissions:
+ wse:
+  default: true
+  description: "Allows using all features"
+  children:
+   wse.command:
+    default: true
+    description: "Allows using all the features commands"
+    children:
+     wse.command.pos1:
+      default: true
+      description: "Allows the set of pos1"
