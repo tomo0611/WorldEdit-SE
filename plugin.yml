@@ -1,6 +1,6 @@
 name: WorldEdit-SE
 main: tomo0611\WorldEditSE
-version: 1.16.0+dev
+version: 1.0.0
 api: [3.14.1]
 load: STARTUP
 author: tomo0611
