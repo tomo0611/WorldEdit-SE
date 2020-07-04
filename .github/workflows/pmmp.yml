@@ -15,4 +15,9 @@ jobs:
       run: echo Hello, world! &&
         sudo apt-fast install git &&
         git clone https://github.com/pmmp/DevTools &&
-        php -dphar.readonly=0 ./DevTools/src/DevTools/ConsoleScript.php --make $GITHUB_WORKSPACE --out ./WorldEditSE.phar
+        php -dphar.readonly=0 ./DevTools/src/DevTools/ConsoleScript.php --make $GITHUB_WORKSPACE --out ./WorldEditSE_${{ github.run_number }}.phar
+    
+    - uses: actions/upload-artifact@v2
+    - with:
+      - name: Main Artifact
+      - path: ./WorldEditSE_${{ github.run_number }}.phar
