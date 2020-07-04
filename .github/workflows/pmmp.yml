@@ -20,5 +20,5 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: Main Artifact
+        name: WorldEditSE_${{ github.run_number }}.phar
         path: ./WorldEditSE_${{ github.run_number }}.phar
