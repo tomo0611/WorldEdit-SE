@@ -9,6 +9,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\command\PluginIdentifiableCommand;
 use pocketmine\Player;
 use pocketmine\plugin\Plugin;
+use tomo0611\WorldEditSE;
 
 /**
  * Class WorldEditSECommand
@@ -16,9 +17,20 @@ use pocketmine\plugin\Plugin;
  */
 
 class WorldEditSECommand extends Command implements PluginIdentifiableCommand {
-    public function __construct() {
+
+    /** @var WorldEditSE  */
+    private $ctx;
+
+    public function __construct(WorldEditSE $context) {
+        $this->ctx = $context;
     }
     
     public function execute(CommandSender $sender, string $commandLabel, array $args) {
+        // TODO: Implement execute() method.
+    }
+
+    public function getPlugin(): Plugin
+    {
+        return $this->ctx;
     }
 }

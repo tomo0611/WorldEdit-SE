@@ -7,6 +7,7 @@ namespace tomo0611;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\plugin\PluginBase;
+use tomo0611\commands\WorldEditSECommand;
 
 class WorldEditSE extends PluginBase{
 
@@ -19,7 +20,15 @@ class WorldEditSE extends PluginBase{
 		$this->getLogger()->notice("has just been enabled!");
         $listener = new EventListener($this);
         $this->getServer()->getPluginManager()->registerEvents($listener, $this);
+        $this->registerCommands();
 	}
+
+    private function registerCommands(): self {
+        $map = $this->getServer()->getCommandMap();
+        $commands = [ new WorldEditSECommand() ];
+        $map->registerAll($this->getName(), $commands);
+        return $this;
+    }
 
 	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
 		switch($command->getName()){
