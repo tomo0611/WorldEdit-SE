@@ -18,6 +18,6 @@ jobs:
         php -dphar.readonly=0 ./DevTools/src/DevTools/ConsoleScript.php --make $GITHUB_WORKSPACE --out ./WorldEditSE_${{ github.run_number }}.phar
     
     - uses: actions/upload-artifact@v2
-    - with:
+    with:
       - name: Main Artifact
       - path: ./WorldEditSE_${{ github.run_number }}.phar
