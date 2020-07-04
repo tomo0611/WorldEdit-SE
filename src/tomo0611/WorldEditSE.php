@@ -17,6 +17,8 @@ class WorldEditSE extends PluginBase{
 	public function onEnable() : void{
 		@mkdir($this->getDataFolder());
 		$this->getLogger()->notice("has just been enabled!");
+        $listener = new EventListener();
+        $this->getServer()->getPluginManager()->registerEvents($listener, $this);
 	}
 
 	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
