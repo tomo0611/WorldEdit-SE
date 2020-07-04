@@ -17,8 +17,9 @@ jobs:
         git clone https://github.com/pmmp/DevTools &&
         php -dphar.readonly=0 ./DevTools/src/DevTools/ConsoleScript.php --make $GITHUB_WORKSPACE --out ./WorldEditSE_${{ github.run_number }}.phar
     
-    - name: Upload artifact
     - uses: actions/upload-artifact@v2
-    - with:
-      - name: Main Artifact
-      - path: ./WorldEditSE_${{ github.run_number }}.phar
+
+    - name: Upload artifact
+      with:
+        name: Main Artifact
+        path: ./WorldEditSE_${{ github.run_number }}.phar
