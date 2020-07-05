@@ -8,9 +8,13 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\plugin\PluginBase;
 use tomo0611\commands\WorldEditSECommand;
+use tomo0611\managers\JobManager;
 
 class WorldEditSE extends PluginBase
 {
+
+    /** @var JobManager */
+    private $jobManager;
 
     public function onLoad(): void
     {
@@ -24,6 +28,7 @@ class WorldEditSE extends PluginBase
         $listener = new EventListener($this);
         $this->getServer()->getPluginManager()->registerEvents($listener, $this);
         $this->registerCommands();
+        $this->initManagers();
     }
 
     private function registerCommands(): void
@@ -33,16 +38,13 @@ class WorldEditSE extends PluginBase
         $map->registerAll($this->getName(), $commands);
     }
 
-    public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool
+    private function initManagers(): void
     {
-        switch ($command->getName()) {
-            case "wse":
-                var_dump($args);
-                $this->getLogger()->info("Hello!");
-                return true;
-            default:
-                return false;
-        }
+        $this->jobManager = new JobManager();
+    }
+
+    public function getJobManager(): JobManager{
+        return $this->jobManager;
     }
 
 }

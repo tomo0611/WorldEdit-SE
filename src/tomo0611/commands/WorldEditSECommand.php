@@ -9,6 +9,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\command\PluginIdentifiableCommand;
 use pocketmine\Player;
 use pocketmine\plugin\Plugin;
+use tomo0611\commands\subs\Pos1Command;
 use tomo0611\WorldEditSE;
 
 /**
@@ -24,10 +25,21 @@ class WorldEditSECommand extends Command implements PluginIdentifiableCommand
     public function __construct(WorldEditSE $context)
     {
         $this->ctx = $context;
+        parent::__construct("wse","World Edit SE 2020");
     }
 
     public function execute(CommandSender $sender, string $commandLabel, array $args)
     {
+        var_dump($args);
+        if(count($args)==0){
+
+        }else{
+            switch ($args[0]){
+                case "pos1":
+                    new Pos1Command($this->ctx,$sender);
+                    break;
+            }
+        }
         // TODO: Implement execute() method.
     }
 
@@ -35,4 +47,5 @@ class WorldEditSECommand extends Command implements PluginIdentifiableCommand
     {
         return $this->ctx;
     }
+
 }

@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace tomo0611\commands\subs;
 
 use pocketmine\Player;
+use tomo0611\WorldEditSE;
 
 /**
  * Class WorldEditSESubCommand
@@ -13,13 +14,17 @@ use pocketmine\Player;
 
 abstract class WorldEditSESubCommand {
 
+    /** @var WorldEditSE */
+    protected $ctx;
+
     /** @var Player */
     protected $player;
     
-    public function __construct(Player $player, string $default = "") {
+    public function __construct(WorldEditSE $ctx, Player $player, array $args = []) {
+        $this->ctx = $ctx;
         $this->player = $player;
-        $this->execute($default);
+        $this->execute($args);
     }
     
-    abstract public function execute(string $default = ""): void;
+    abstract public function execute(array $args = []): void;
 }
