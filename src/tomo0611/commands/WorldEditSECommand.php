@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace tomo0611\commands;
 
@@ -15,17 +15,19 @@ use tomo0611\WorldEditSE;
  * Class WorldEditSECommand
  * @package tomo0611/commands
  */
+class WorldEditSECommand extends Command implements PluginIdentifiableCommand
+{
 
-class WorldEditSECommand extends Command implements PluginIdentifiableCommand {
-
-    /** @var WorldEditSE  */
+    /** @var WorldEditSE */
     private $ctx;
 
-    public function __construct(WorldEditSE $context) {
+    public function __construct(WorldEditSE $context)
+    {
         $this->ctx = $context;
     }
-    
-    public function execute(CommandSender $sender, string $commandLabel, array $args) {
+
+    public function execute(CommandSender $sender, string $commandLabel, array $args)
+    {
         // TODO: Implement execute() method.
     }
 
